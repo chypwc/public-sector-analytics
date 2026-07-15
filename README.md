@@ -6,7 +6,7 @@ The central theme is practical analytics for public-sector and operational decis
 
 ## Overview
 
-The portfolio brings together projects across education, public health, revenue compliance, workers compensation, hospital costing, labour-market analysis, and cloud data engineering. Across these projects, the work demonstrates the ability to:
+The portfolio brings together projects across education, public health, government revenue compliance, workers compensation, hospital costing, labour-market analysis, and cloud data engineering. Across these projects, the work demonstrates the ability to:
 
 - design reporting-ready data models from operational or administrative source data;
 - build SQL validation, reconciliation, audit, and data-quality controls;
@@ -19,7 +19,7 @@ The portfolio brings together projects across education, public health, revenue 
 
 | Capability | Evidence across the portfolio |
 | --- | --- |
-| Public-sector reporting | Education monthly reporting, health surveillance dashboards, revenue compliance reporting, workers compensation financial/performance packs, ACT employment analysis |
+| Public-sector reporting | Education monthly reporting, health surveillance dashboards, government revenue compliance reporting, workers compensation financial/performance packs, ACT employment analysis |
 | Decision support | Patient costing and ABF comparison, workforce planning insights, claims triage evidence, monthly education briefs |
 | SQL analytics engineering | Star schemas, curated views, reporting marts, validation queries, reconciliation outputs, stored procedures |
 | Data quality and governance | Failed-record handling, issue logs, source-to-reporting checks, privacy-aware extracts, audit layers |
@@ -34,7 +34,7 @@ The portfolio brings together projects across education, public health, revenue 
 | --- | --- | --- | --- | --- |
 | Education Azure Lakehouse Analytics | Education reporting and monthly insights | Azure Data Factory, ADLS Gen2, Synapse serverless SQL, Databricks, Delta Lake, Azure SQL, Power BI, SQL, Python | Three-pipeline Azure portfolio, QA lakehouse evidence, monthly education insights dashboard, briefs, analysis report | [education_data_lakehouse](https://github.com/chypwc/education_data_lakehouse) |
 | Public Health Surveillance Lakehouse | Public health surveillance and operational triage | ADLS Gen2, Azure Data Factory, Synapse serverless SQL, Power BI, SQL, Python | REDCap-style case and lab workflow, validation outputs, curated Parquet reporting layer, Power BI surveillance dashboard | [health-surveillance-lakehouse](https://github.com/chypwc/health-surveillance-lakehouse) |
-| Revenue Compliance Reporting | Revenue compliance, tax debt, and operational reporting | SQL Server, SSIS, SSRS, SSMS, Excel, CSV, T-SQL | Monthly feed ingestion, validated staging tables, star-schema warehouse, data-quality and reconciliation controls, SSRS reports, letter templates, management KPIs | [revenue-compliance-reporting](https://github.com/chypwc/revenue-compliance-reporting) |
+| Revenue Compliance Reporting | Public-sector taxation, government revenue compliance, tax debt, and operational reporting | SQL Server, SSIS, SSRS, SSMS, Excel, CSV, T-SQL | Monthly taxation and revenue feed ingestion, validated staging tables, star-schema warehouse, data-quality and reconciliation controls, SSRS reports, letter templates, management KPIs | [revenue-compliance-reporting](https://github.com/chypwc/revenue-compliance-reporting) |
 | Workers Compensation Reporting | Claims, finance, governance, FOI-style reporting | SQL Server, Power BI, Excel, Python, Dataflow Gen1, on-premises gateway | Curated reporting views, Excel financial/performance pack, Power BI dashboard, FOI-style extract, executive briefing, ML appendix | [workers-comp-reporting](https://github.com/chypwc/workers-comp-reporting) |
 | Patient-Level Costing and ABF Decision Support | Hospital costing and service-line analysis | SQL Server, T-SQL, Excel, Power Query, Power Pivot, Python | Patient-level costing model, GL reconciliation, ABF-style comparison, management workbook, costing methodology, runbook | [patient-costing-abf](https://github.com/chypwc/patient-costing-abf) |
 | ACT Employment Analysis | Labour-market analysis and workforce policy | SQL Server, Power BI, DAX, ABS Labour Force data | Star schema over 500,000+ records, employment dashboard, gender equity and economic resilience policy analysis | [act_employment](https://github.com/chypwc/act_employment) |
@@ -64,11 +64,11 @@ The project is strong evidence for health data reporting, SQL validation, issue 
 
 ### Revenue Compliance Reporting
 
-This project demonstrates an end-to-end SQL Server revenue compliance analytics workflow using synthetic operational data. It integrates monthly Excel and CSV feeds through SSIS into validated staging tables and a star-schema warehouse, with SQL controls for file completeness, rejected records, audit outcomes, and reconciliation across liabilities, charge lines, payments, allocations, and debt balances.
+This project demonstrates an end-to-end SQL Server public-sector taxation and government revenue compliance reporting workflow using synthetic operational data covering property rates, land tax, duties, and payroll tax. It integrates monthly Excel and CSV feeds through SSIS into validated staging tables and a star-schema warehouse, with SQL controls for file completeness, rejected records, audit outcomes, and reconciliation across liabilities, charge lines, payments, allocations, and debt balances.
 
-The final outputs include SSRS operational reports, letter templates, exception monitoring, account-history investigation views, overdue-account prioritisation, and management KPIs covering assessed revenue, collections, debt movement, arrears trends, revenue-type exposure, and account-level compliance risk.
+The final outputs include SSRS operational reports, letter templates, exception monitoring, account-history investigation views, overdue-account prioritisation, and management KPIs covering assessed government revenue, collections, debt movement, arrears trends, revenue-type exposure, and account-level compliance risk.
 
-The project is strong evidence for revenue-office-style reporting, ETL support, SQL Server data-quality controls, compliance follow-up workflows, and stakeholder-ready management reporting.
+The project is strong evidence for public-sector taxation reporting, revenue-office-style compliance analytics, ETL support, SQL Server data-quality controls, compliance follow-up workflows, and stakeholder-ready management reporting.
 
 ### Workers Compensation Reporting
 
