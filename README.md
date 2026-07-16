@@ -124,13 +124,3 @@ The project is strong evidence for real-time data products, serverless design, m
 This project demonstrates a serverless data lake transformation workflow using Snowflake ingestion into S3, Glue Crawlers and Data Catalog metadata, and dbt-glue transformations on Glue Interactive Sessions. CloudFormation manages infrastructure and GitHub Actions orchestrates deployment, ingestion, catalog refresh, and dbt runs.
 
 The project is strong evidence for SQL-based transformation, feature engineering, data lake automation, and CI/CD for analytics workflows.
-
-## Future Direction
-
-This portfolio can be extended in three directions:
-
-- publish a short project-ranking guide for recruiters, showing which projects best match public-sector reporting, health analytics, education analytics, WHS assurance, finance/costing, and cloud data engineering roles;
-- add consistent screenshots or one-page evidence previews for the strongest dashboard and reporting outputs;
-- add consistent role-targeted navigation so recruiters can quickly choose between public-sector reporting, health analytics, WHS assurance, finance/costing, workforce analysis, commercial analytics, and cloud data engineering evidence.
-
-The recommended repository name for this hub is `public-sector-analytics-portfolio`.
