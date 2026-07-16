@@ -6,7 +6,7 @@ The central theme is practical analytics for public-sector and operational decis
 
 ## Overview
 
-The portfolio brings together projects across education, public health, government revenue compliance, workers compensation, hospital costing, labour-market analysis, and cloud data engineering. Across these projects, the work demonstrates the ability to:
+The portfolio brings together projects across education, public health, government revenue compliance, workplace health and safety assurance, workers compensation, hospital costing, labour-market analysis, and cloud data engineering. Across these projects, the work demonstrates the ability to:
 
 - design reporting-ready data models from operational or administrative source data;
 - build SQL validation, reconciliation, audit, and data-quality controls;
@@ -19,10 +19,10 @@ The portfolio brings together projects across education, public health, governme
 
 | Capability | Evidence across the portfolio |
 | --- | --- |
-| Public-sector reporting | Education monthly reporting, health surveillance dashboards, government revenue compliance reporting, workers compensation financial/performance packs, ACT employment analysis |
-| Decision support | Patient costing and ABF comparison, workforce planning insights, claims triage evidence, monthly education briefs |
+| Public-sector reporting | Education monthly reporting, health surveillance dashboards, government revenue compliance reporting, WHS assurance dashboards, workers compensation financial/performance packs, ACT employment analysis |
+| Decision support | Patient costing and ABF comparison, workforce planning insights, WHS follow-up and compliance monitoring, claims triage evidence, monthly education briefs |
 | SQL analytics engineering | Star schemas, curated views, reporting marts, validation queries, reconciliation outputs, stored procedures |
-| Data quality and governance | Failed-record handling, issue logs, source-to-reporting checks, privacy-aware extracts, audit layers |
+| Data quality and governance | Failed-record handling, issue logs, source-to-reporting checks, reconciliation outputs, exception reporting, privacy-aware extracts, audit layers |
 | Power BI and Excel reporting | Dashboards, semantic models, slicers, PivotTables, dashboard test notes, report screenshots |
 | Cloud data platforms | Azure Data Factory, ADLS Gen2, Synapse serverless SQL, Databricks, Azure SQL, AWS DMS, EMR, Glue, S3, MWAA |
 | Infrastructure and automation | Terraform, CloudFormation, GitHub Actions, event-driven pipelines, generated Airflow DAGs |
@@ -32,11 +32,12 @@ The portfolio brings together projects across education, public health, governme
 
 | Project | Domain | Tools | Main Outputs | Link |
 | --- | --- | --- | --- | --- |
-| Education Azure Lakehouse Analytics | Education reporting and monthly insights | Azure Data Factory, ADLS Gen2, Synapse serverless SQL, Databricks, Delta Lake, Azure SQL, Power BI, SQL, Python | Three-pipeline Azure portfolio, QA lakehouse evidence, monthly education insights dashboard, briefs, analysis report | [education_data_lakehouse](https://github.com/chypwc/education_data_lakehouse) |
+| Education Azure Lakehouse Analytics | Education reporting and monthly insights | Azure Data Factory, ADLS Gen2, Synapse serverless SQL, Databricks, Delta Lake, Azure SQL, Power BI, SQL, Python | ADF/Synapse ingestion baseline, Databricks QA lakehouse, Azure SQL monthly reporting mart, Power BI dashboard, briefs, analysis report | [education_data_lakehouse](https://github.com/chypwc/education_data_lakehouse) |
 | Public Health Surveillance Lakehouse | Public health surveillance and operational triage | ADLS Gen2, Azure Data Factory, Synapse serverless SQL, Power BI, SQL, Python | REDCap-style case and lab workflow, validation outputs, curated Parquet reporting layer, Power BI surveillance dashboard | [health-surveillance-lakehouse](https://github.com/chypwc/health-surveillance-lakehouse) |
 | Revenue Compliance Reporting | Public-sector taxation, government revenue compliance, tax debt, and operational reporting | SQL Server, SSIS, SSRS, SSMS, Excel, CSV, T-SQL | Monthly taxation and revenue feed ingestion, validated staging tables, star-schema warehouse, data-quality and reconciliation controls, SSRS reports, letter templates, management KPIs | [revenue-compliance-reporting](https://github.com/chypwc/revenue-compliance-reporting) |
-| Workers Compensation Reporting | Claims, finance, governance, FOI-style reporting | SQL Server, Power BI, Excel, Python, Dataflow Gen1, on-premises gateway | Curated reporting views, Excel financial/performance pack, Power BI dashboard, FOI-style extract, executive briefing, ML appendix | [workers-comp-reporting](https://github.com/chypwc/workers-comp-reporting) |
 | Patient-Level Costing and ABF Decision Support | Hospital costing and service-line analysis | SQL Server, T-SQL, Excel, Power Query, Power Pivot, Python | Patient-level costing model, GL reconciliation, ABF-style comparison, management workbook, costing methodology, runbook | [patient-costing-abf](https://github.com/chypwc/patient-costing-abf) |
+| Workers Compensation Reporting | Claims, finance, governance, FOI-style reporting | SQL Server, Power BI, Excel, Python, Dataflow Gen1, on-premises gateway | Curated reporting views, Excel financial/performance pack, Power BI dashboard, FOI-style extract, executive briefing, ML appendix | [workers-comp-reporting](https://github.com/chypwc/workers-comp-reporting) |
+| WHS Reporting and Assurance Dashboard | Workplace health and safety reporting, compliance monitoring, and assurance | Power BI, Power Query, Excel | Repeatable reporting model from messy operational extracts, validation and reconciliation logic, exception reporting, leadership dashboard views, source-traceability documentation | [whs-reporting-powerbi](https://github.com/chypwc/whs-reporting-powerbi) |
 | ACT Employment Analysis | Labour-market analysis and workforce policy | SQL Server, Power BI, DAX, ABS Labour Force data | Star schema over 500,000+ records, employment dashboard, gender equity and economic resilience policy analysis | [act_employment](https://github.com/chypwc/act_employment) |
 
 ## AWS and Cloud Data Engineering Projects
@@ -52,7 +53,11 @@ The portfolio brings together projects across education, public health, governme
 
 ### Education Azure Lakehouse Analytics
 
-This project demonstrates a three-pipeline Azure education analytics portfolio using synthetic school, student, attendance, assessment, and school event data. Pipeline A shows an ADF and Synapse serverless SQL baseline. Pipeline B extends the project into a Databricks QA lakehouse with Bronze, Silver, QA, Gold, failed-record handling, and dashboard validation evidence. Pipeline C adds a monthly education insights workflow using Azure SQL, Power BI, analysis reports, and stakeholder-facing briefs.
+This project demonstrates a three-pipeline Azure education analytics portfolio using synthetic school, student, attendance, assessment, and school event data. The pipelines show the same education reporting problem at increasing levels of maturity:
+
+- Pipeline A builds an ADF and Synapse serverless SQL baseline for landing, querying, and shaping school operational data into reporting-ready views.
+- Pipeline B extends the workflow into a Databricks QA lakehouse with Bronze, Silver, QA, and Gold layers, including failed-record handling, quality checks, and dashboard validation evidence.
+- Pipeline C adds a monthly education insights workflow using Azure SQL Database, merge/upsert processing, a Power BI semantic model, dashboard pages, analysis reports, stakeholder briefs, and caveats for recurring management reporting.
 
 The project is strong evidence for education analytics, data quality, reporting-layer design, and the ability to turn monthly operational data into clear insights and caveats.
 
@@ -70,17 +75,25 @@ The final outputs include SSRS operational reports, letter templates, exception 
 
 The project is strong evidence for public-sector taxation reporting, revenue-office-style compliance analytics, ETL support, SQL Server data-quality controls, compliance follow-up workflows, and stakeholder-ready management reporting.
 
+### Patient-Level Costing and ABF Decision Support
+
+This project demonstrates a synthetic hospital costing workflow connecting general-ledger expenditure, clinical activity, resource use, and direct cost detail. It validates inputs, assigns and allocates cost to patient encounters, reconciles outputs to the general ledger, and publishes Excel-ready reporting views.
+
+The Excel workbook supports service-line cost analysis, cost-driver review, high-cost encounter review, ABF-style comparison, reconciliation, and data-quality monitoring.
+
 ### Workers Compensation Reporting
 
 This project demonstrates an end-to-end workers compensation reporting workflow using synthetic operational, financial, governance, and reporting extracts. It brings raw data under control through SQL Server staging, mapping, integration, reconciliation, curated views, and privacy-aware reporting rules.
 
 The final outputs include an annual-report-style Excel pack, a Power BI report, FOI-style de-identified extract design, governance and reconciliation evidence, an executive briefing, and an optional high-cost claim machine-learning appendix.
 
-### Patient-Level Costing and ABF Decision Support
+### WHS Reporting and Assurance Dashboard
 
-This project demonstrates a synthetic hospital costing workflow connecting general-ledger expenditure, clinical activity, resource use, and direct cost detail. It validates inputs, assigns and allocates cost to patient encounters, reconciles outputs to the general ledger, and publishes Excel-ready reporting views.
+This project demonstrates a Power BI workplace health and safety reporting workflow that converts messy operational extracts from Safety Portal, SafetyCulture, training records, contractor certification registers, and corrective action logs into a repeatable reporting model for leadership and assurance use.
 
-The Excel workbook supports service-line cost analysis, cost-driver review, high-cost encounter review, ABF-style comparison, reconciliation, and data-quality monitoring.
+The workflow uses Power Query to clean, validate, reconcile, and document source data before it reaches the dashboard layer. It includes exception-reporting logic and source-traceability notes so recurring WHS outputs can show where safety follow-up is needed, whether compliance obligations are on track, and which data-quality or system-access issues affect reporting reliability.
+
+The project is strong evidence for operational reporting, Power Query transformation, data-quality assurance, compliance monitoring, and stakeholder-ready dashboard documentation.
 
 ### ACT Employment Analysis
 
@@ -116,8 +129,8 @@ The project is strong evidence for SQL-based transformation, feature engineering
 
 This portfolio can be extended in three directions:
 
-- publish a short project-ranking guide for recruiters, showing which projects best match public-sector reporting, health analytics, education analytics, finance/costing, and cloud data engineering roles;
+- publish a short project-ranking guide for recruiters, showing which projects best match public-sector reporting, health analytics, education analytics, WHS assurance, finance/costing, and cloud data engineering roles;
 - add consistent screenshots or one-page evidence previews for the strongest dashboard and reporting outputs;
-- add consistent role-targeted navigation so recruiters can quickly choose between public-sector reporting, health analytics, finance/costing, workforce analysis, commercial analytics, and cloud data engineering evidence.
+- add consistent role-targeted navigation so recruiters can quickly choose between public-sector reporting, health analytics, WHS assurance, finance/costing, workforce analysis, commercial analytics, and cloud data engineering evidence.
 
 The recommended repository name for this hub is `public-sector-analytics-portfolio`.
