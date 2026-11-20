@@ -6,7 +6,7 @@ The central theme is practical analytics for public-sector and operational decis
 
 ## Overview
 
-The portfolio brings together projects across education, public health, government revenue compliance, workplace health and safety assurance, workers compensation, hospital costing, labour-market analysis, and cloud data engineering. Across these projects, the work demonstrates the ability to:
+The portfolio brings together projects across education, public health, government revenue compliance, workplace health and safety assurance, workers compensation, hospital costing, labour-market analysis, AI-assisted policy briefing, and cloud data engineering. Across these projects, the work demonstrates the ability to:
 
 - design reporting-ready data models from operational or administrative source data;
 - build SQL validation, reconciliation, audit, and data-quality controls;
@@ -39,6 +39,7 @@ The portfolio brings together projects across education, public health, governme
 | Workers Compensation Reporting | Claims, finance, governance, FOI-style reporting | SQL Server, Power BI, Excel, Python, Dataflow Gen1, on-premises gateway | Curated reporting views, Excel financial/performance pack, Power BI dashboard, FOI-style extract, executive briefing, ML appendix | [workers-comp-reporting](https://github.com/chypwc/workers-comp-reporting) |
 | WHS Reporting and Assurance Dashboard | Workplace health and safety reporting, compliance monitoring, and assurance | Power BI, Power Query, Excel | Repeatable reporting model from messy operational extracts, validation and reconciliation logic, exception reporting, leadership dashboard views, source-traceability documentation | [whs-reporting-powerbi](https://github.com/chypwc/whs-reporting-powerbi) |
 | ACT Employment Analysis | Labour-market analysis and workforce policy | SQL Server, Power BI, DAX, ABS Labour Force data | Star schema over 500,000+ records, employment dashboard, gender equity and economic resilience policy analysis | [act_employment](https://github.com/chypwc/act_employment) |
+| AI Policy Briefing Workflow | Staff policy enquiries and decision support | Microsoft Copilot Studio, SharePoint, ACT Government policy PDFs | Built and tested a multi-agent workflow to gather policy evidence, analyse enquiries and policy context, draft cited summaries and options briefs, verify drafts, and report findings for human review; checked a sample report against source policies and prepared a two-page options brief | [policy-briefing-workflow](https://github.com/chypwc/policy-briefing-workflow) |
 
 ## AWS and Cloud Data Engineering Projects
 
@@ -100,6 +101,12 @@ The project is strong evidence for operational reporting, Power Query transforma
 This project transforms ABS Labour Force data into a SQL Server star schema and Power BI dashboard focused on ACT employment trends. It analyses gender equity, full-time and part-time composition, industry concentration, public-sector dependency, volatility, and economic resilience.
 
 The project is strong evidence for using public datasets to produce policy-oriented analysis, with clear analytical findings and workforce planning implications.
+
+### AI Policy Briefing Workflow
+
+This project built and tested a Microsoft Copilot Studio workflow in which AI agents collaborate on staff policy enquiries. A research agent gathers evidence from ACT Government policy PDFs in SharePoint; drafting agents analyse the staff question and policy context before preparing cited policy summaries and options briefs; verification agents check the drafts; and a reporting agent presents the requested sections and verification notes for human review. The [workflow documentation](https://github.com/chypwc/policy-briefing-workflow/blob/main/WORKFLOW.md) describes the routing, shared research, drafting checks, and test results.
+
+The project also reviewed an AI-generated report against the source policies, documented claims needing correction, and prepared a two-page options brief with recommended actions for a sample enquiry.
 
 ### InsightFlow
 
